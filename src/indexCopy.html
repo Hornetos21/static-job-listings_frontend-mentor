@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/main.min.css" />
+    <title>Frontend Mentor | Job Listings</title>
+  </head>
+  <body>
+    <header class="header"></header>
+
+    <main class="container">
+      <!--* FILTER -->
+      <div id="filter" class="filter filter_active">
+        <div class="card filter__card">
+          <div class="tags">
+            <div class="tag tag_del">
+              <div class="tag_del-name">Frontend</div>
+              <button class="tag_del-x">⨯</button>
+            </div>
+            <div class="tag tag_del">
+              <div class="tag_del-name">CSS</div>
+              <button class="tag_del-x">⨯</button>
+            </div>
+            <div class="tag tag_del">
+              <div class="tag_del-name">Javascript</div>
+              <button class="tag_del-x">⨯</button>
+            </div>
+          </div>
+          <button class="filter-clear">Clear</button>
+        </div>
+      </div>
+      <!--* LIST -->
+      <ul id="list" class="list">
+        <li class="card list__card list__card_featured">
+          <div class="card__job">
+            <div class="card__job-logo">
+              <img src="./images/photosnap.svg" alt="logo" />
+            </div>
+            <div class="card__job-details">
+              <div class="card__job-company">
+                <h4 class="card__job-company-name">Photosnap</h4>
+                <div class="badge badge_new">NEW!</div>
+                <div class="badge badge_featured">FEATURED</div>
+              </div>
+              <h4 class="card__job-position">Senior Frontend Developer</h4>
+              <div class="card__job-descr">
+                1d ago<span>&bull;</span>Full Time<span>&bull;</span>USA only
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="tags">
+            <div class="tag">Frontend</div>
+            <div class="tag">Senior</div>
+            <div class="tag">HTML</div>
+            <div class="tag">CSS</div>
+            <div class="tag">JavaScript</div>
+          </div>
+        </li>
+      </ul>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/Hornetos21">Igor Shapovalov</a>.
+      </div>
+    </footer>
+    <script type="module" src="./js/cards.js"></script>
+  </body>
+</html>

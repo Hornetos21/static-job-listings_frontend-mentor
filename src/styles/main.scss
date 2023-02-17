@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+@import 'var';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.5rem;
+}
+
+html {
+  background-color: $background-color;
+  font-size: 62.5%;
+  height: 100vh;
+}
+
+.header {
+  background-color: $primary-color;
+  height: 15.6rem;
+  background-image: url('../images/bg-header-mobile.svg');
+  width: 100%;
+  margin-bottom: 5.5rem;
+}
+
+.container {
+  padding: 0 2.5rem 2rem;
+  margin: 0 auto;
+  max-width: 1110px;
+}
+// * Common blocks
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  margin-right: 3.5rem;
+
+  .tag {
+    background-color: $filter-tablets-color;
+    border-radius: 5px;
+    padding: 1rem;
+    color: $primary-color;
+    font-weight: 700;
+    &_del {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      overflow: hidden;
+      &-name {
+        padding: 0 1rem;
+      }
+      &-x {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        border: none;
+        width: 3.2rem;
+        height: 3.2rem;
+        color: white;
+        font-size: 2.6rem;
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+.card {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px hsla(180, 29%, 50%, 0.2);
+  padding: 3.3rem 2.6rem 2.5rem 2.2rem;
+  &__job {
+    &-logo {
+      width: 5rem;
+      position: absolute;
+      top: 0;
+      transform: translate(0, -50%);
+      & img {
+        width: 100%;
+      }
+    }
+    &-details {
+      display: block;
+    }
+    &-company {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 1.3rem;
+
+      &-name {
+        color: $primary-color;
+        margin-right: 2.4rem;
+        margin-bottom: 0;
+      }
+    }
+    &-position {
+      color: $very-dark-cyan;
+      margin-bottom: 1.9rem;
+    }
+    &-descr {
+      font-weight: 500;
+      margin-bottom: 1.8rem;
+      color: $dark-cyan;
+      & span {
+        padding: 0 1rem;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+.badge {
+  font-size: 1.4rem;
+  height: 2.4rem;
+  color: white;
+  border-radius: 15px;
+  padding: 0.8rem 0;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1rem;
+  margin-right: 0.8rem;
+  &_new {
+    width: 5.2rem;
+    background-color: $primary-color;
+  }
+
+  &_featured {
+    background-color: $very-dark-cyan;
+    width: 7.9rem;
+  }
+}
+// *JOB-LIST
+.list {
+  list-style-type: none;
+  &__card {
+    margin: 4rem auto 0;
+    position: relative;
+    min-height: 25.9rem;
+    &_featured {
+      border-left: 5px solid $primary-color;
+      padding-left: 1.7rem;
+    }
+    & hr {
+      margin-bottom: 1.7rem;
+      border: none;
+      border-top: 1px solid $dark-cyan;
+    }
+  }
+}
+
+//* FILTER
+.filter {
+  display: none;
+  &_active {
+    width: 100%;
+    transform: translateY(-90px);
+    display: block;
+    margin: 0 auto -75px;
+  }
+  &__card {
+    position: static;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 7.2rem;
+    padding: 2rem;
+    padding-right: 2.5rem;
+    margin-top: 0;
+  }
+  &-clear {
+    background-color: inherit;
+    border: none;
+    color: $dark-cyan;
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+}
+
+// *FOOTER
+footer {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0.5rem;
+  text-align: center;
+
+  .attribution {
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+
+  .attribution a {
+    color: $primary-color;
+  }
+}
+
+@import 'media';
