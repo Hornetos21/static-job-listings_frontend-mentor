@@ -1,4 +1,4 @@
-const URL = './data/data.json'
+const URL = './src/data/data.json'
 
 const list = document.querySelector('.list')
 const filter = document.querySelector('.filter')
