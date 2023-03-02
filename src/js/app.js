@@ -35,7 +35,6 @@ const renderCards = (cards) => {
 
          const badge = (elem, text, ...classes) => {
             elem.textContent = text
-            console.log(classes)
             elem.classList.add(...classes)
          }
 
@@ -84,7 +83,7 @@ const renderCards = (cards) => {
               </div>
             </div>
             <hr />
-            <div id="list-tags" class="tags"></div>`
+            <div class="tags"></div>`
       cardElement.classList.add('card', 'list__card')
       // * Append card
       list.append(cardElement)
@@ -99,7 +98,7 @@ const renderCards = (cards) => {
          tagElement.textContent = tag
          tagElement.classList.add('tag')
          document
-            .querySelectorAll('#list-tags')
+            .querySelectorAll('.tags')
             .forEach((div) => div.append(tagElement))
       })
    })
