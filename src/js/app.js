@@ -35,7 +35,6 @@ const renderCards = (cards) => {
 
          const badge = (elem, text, ...classes) => {
             elem.textContent = text
-            console.log(classes)
             elem.classList.add(...classes)
          }
 
