@@ -2,7 +2,9 @@ import './card.scss'
 import './tags.scss'
 import './badge.scss'
 
-const Card = (cards) => {
+const Card = (card) => {
+   console.log('render: Card')
+
    const {
       logo,
       company,
@@ -11,26 +13,25 @@ const Card = (cards) => {
       contract,
       location,
       tags,
-      addTag,
-   } = cards
+      onTagListClick,
+   } = card
 
    const arrTags = tags.map((tag) => (
-      <div className="tag" key={tag} onClick={() => addTag(tag)}>
+      <div className="tag" key={tag} onClick={() => onTagListClick(tag)}>
          {tag}
       </div>
    ))
 
-   const newBadge = cards.new ? (
+   const newBadge = card.new ? (
       <div className="badge badge_new">NEW!</div>
    ) : null
 
-   const featuredBadge = cards.featured ? (
+   const featuredBadge = card.featured ? (
       <div className="badge badge_featured">FEATURED</div>
    ) : null
 
    return (
       <li className="card list__card">
-         {console.log('render: Card')}
          <div className="card__job">
             <div className="card__job-logo">
                <img src={logo} alt="logo" />

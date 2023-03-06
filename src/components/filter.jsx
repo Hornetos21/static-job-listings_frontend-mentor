@@ -2,6 +2,8 @@ import './filter.scss'
 import './tags.scss'
 
 const Filter = ({ tags, onClear, onDelete }) => {
+   console.log('render: Filter')
+
    const classes = !tags.length ? 'filter' : 'filter filter_active'
 
    const arrTags = tags.map((tag) => {

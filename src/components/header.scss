@@ -2,14 +2,14 @@
 .header {
    background-color: $primary-color;
    height: 15.6rem;
-   background-image: url('./images/bg-header-mobile.svg');
+   background-image: url('/images/bg-header-mobile.svg');
    width: 100%;
    margin-bottom: 5.5rem;
 }
 
 @media only screen and (min-width: 426px) {
    .header {
-      background-image: url('./images/bg-header-desktop.svg');
+      background-image: url('/images/bg-header-desktop.svg');
       margin-bottom: 7.2rem;
    }
 }

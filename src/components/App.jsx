@@ -1,17 +1,20 @@
 import { useState, useEffect } from 'react'
+
+import Filter from './Filter'
+import Footer from './footer'
+import Header from './header'
+import List from './list'
+
 import './App.scss'
 
-import Filter from './components/Filter'
-import Footer from './components/footer'
-import Header from './components/header'
-import List from './components/list'
-
-const DATA_JSON = './data.json'
+const DATA_JSON = '../data/data.json'
 
 function App() {
+   console.log('render: App')
+
    const [filterTags, setFilterTags] = useState([])
    const [initCards, setInitCards] = useState([])
-   const [cards, setCards] = useState([])
+   const [filteredCards, setFilteredCards] = useState([])
    const [error, setError] = useState('')
    const [isLoading, setIsLoading] = useState(true)
 
@@ -25,7 +28,7 @@ function App() {
                   tags: [job.level, job.role, ...job.languages, ...job.tools],
                }
             })
-            setCards(cards)
+            setFilteredCards(cards)
             setInitCards(cards)
          })
 
@@ -38,10 +41,9 @@ function App() {
    }, [])
 
    useEffect(() => {
-      newFilter()
+      filteringCards()
    }, [filterTags])
 
-   // *If makes Error
    if (error) {
       return <h1>Error: {error}</h1>
    }
@@ -50,28 +52,25 @@ function App() {
 
    const deleteTag = (tagDel) => {
       const filteredTags = filterTags.filter((tag) => tag !== tagDel)
-      newFilter()
+      filteringCards()
       setFilterTags(filteredTags)
    }
 
-   const addTagToFilter = (tagList) => {
+   const onTagListClick = (tagList) => {
       !filterTags.includes(tagList)
          ? setFilterTags([...filterTags, tagList])
          : null
    }
 
-   const newFilter = () => {
-      console.log('filter')
-
+   const filteringCards = () => {
       const filterCards = initCards.filter((card) =>
          filterTags.every((tag) => card.tags.includes(tag))
       )
-      setCards(filterCards)
+      setFilteredCards(filterCards)
    }
 
    return (
       <>
-         {console.log('render: App')}
          <Header />
          <main className="container">
             {isLoading ? (
@@ -83,7 +82,7 @@ function App() {
                      onClear={clearTags}
                      onDelete={deleteTag}
                   />
-                  <List cards={cards} addTag={addTagToFilter} />
+                  <List cards={filteredCards} onTagListClick={onTagListClick} />
                </>
             )}
          </main>
