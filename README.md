@@ -1,4 +1,4 @@
-![Design preview for the Job listings with filtering coding challenge](./design/desktop-preview.jpg) 
+![Design preview for the Job listings with filtering coding challenge](./design/desktop-preview.jpg)
 
 # Frontend Mentor - Job listings with filtering solution
 
@@ -10,13 +10,22 @@
 
 Users should be able to:
 
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Filter job listings based on the categories
+-  View the optimal layout for the site depending on their device's screen size
+-  See hover states for all interactive elements on the page
+-  Filter job listings based on the categories
 
 ### Built with
 
-- Native JS
-- SCSS
-- Flexbox
-- Mobile-first workflow
+-  React + Vite
+-  SCSS
+-  Flexbox
+-  Mobile-first workflow
+
+### Available Scripts
+
+-  `run dev`
+   Runs the app in the development mode.
+-  `run build`
+   Builds the app for production to the `dist` folder.
+-  `run preview`
+   Locally preview production build
