@@ -1,0 +1,28 @@
+@import './var';
+
+.badge {
+  font-size: 1.4rem;
+  height: 2.4rem;
+  color: white;
+  border-radius: 15px;
+  padding: 0.9rem 0;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1rem;
+  margin-right: 0.8rem;
+  &_new {
+    width: 5.2rem;
+    background-color: $primary-color;
+  }
+
+  &_featured {
+    background-color: $very-dark-cyan;
+    width: 7.9rem;
+  }
+}
+
+@media only screen and (min-width: 870px) {
+  .badge {
+    display: inline-block;
+  }
+}

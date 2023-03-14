@@ -1,0 +1,70 @@
+@import './var';
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  margin-right: 3.5rem;
+
+  .tag {
+    background-color: $filter-tablets-color;
+    border-radius: 5px;
+    padding: 1rem;
+    color: $primary-color;
+    font-weight: 700;
+    &_del {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      overflow: hidden;
+      &-name {
+        padding: 0 1rem;
+      }
+      &-x {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        border: none;
+        width: 3.2rem;
+        height: 3.2rem;
+        color: white;
+        font-size: 2.6rem;
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 870px) {
+  .tag {
+    transition: background-color 0.3s, color 0.3s;
+    &:hover {
+      background-color: $primary-color;
+      color: $background-color;
+    }
+    cursor: pointer;
+    &_del {
+      &:hover {
+        background-color: $filter-tablets-color;
+        color: $primary-color;
+      }
+      cursor: default;
+      &-x {
+        transition: background-color 0.2s, color 0.2s;
+        cursor: pointer;
+        &:hover {
+          background-color: $very-dark-cyan;
+          color: $background-color;
+        }
+      }
+    }
+  }
+
+  .tags {
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 1.7rem;
+  }
+}
