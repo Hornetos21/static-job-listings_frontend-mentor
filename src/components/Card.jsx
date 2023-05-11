@@ -12,6 +12,8 @@ const Card = (card) => {
     location,
     tags,
     onTagListClick,
+    new: newJob,
+    featured,
   } = card
 
   const cardTags = tags.map((tag) => (
@@ -20,9 +22,9 @@ const Card = (card) => {
     </div>
   ))
 
-  const newBadge = card.new ? <div className="badge badge_new">NEW!</div> : null
+  const newBadge = newJob ? <div className="badge badge_new">NEW!</div> : null
 
-  const featuredBadge = card.featured ? (
+  const featuredBadge = featured ? (
     <div className="badge badge_featured">FEATURED</div>
   ) : null
 

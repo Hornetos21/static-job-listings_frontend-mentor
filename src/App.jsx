@@ -1,15 +1,19 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
-import Filter from './Filter'
-import Footer from './footer'
-import Header from './header'
-import List from './list'
+import FilterPanel from './components/FilterPanel.jsx'
+import Footer from './components/Footer.jsx'
+import Header from './components/Header.jsx'
+import JobList from './components/JobList.jsx'
 
-import '../scss/app.scss'
+import './scss/app.scss'
+import { useDispatch } from 'react-redux'
+import { addPositions } from './store/positions/positions-actions.js'
 
 const DATA_JSON = '../data/data.json'
 
 function App() {
+  const dispatch = useDispatch()
+
   const [data, setData] = useState({
     cards: [],
     tagsFilter: [],
@@ -29,7 +33,8 @@ function App() {
             tags: [job.level, job.role, ...job.languages, ...job.tools],
           }
         })
-        setData({ ...data, cards: [...newCards] })
+        dispatch(addPositions(newCards))
+        // setData({ ...data, cards: [...newCards] })
       })
       .catch((error) => setError(error.message))
       .finally(() => setIsLoading(false))
@@ -74,18 +79,16 @@ function App() {
           <h1>Loading...</h1>
         ) : (
           <>
-            <Filter
+            <FilterPanel
               tags={data.tagsFilter}
               onClear={clearTags}
               onDelete={deleteTag}
             />
-            <List cards={filteredCards} onTagListClick={onTagListClick} />
+            <JobList cards={filteredCards} onTagListClick={onTagListClick} />
           </>
         )}
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </>
   )
 }
