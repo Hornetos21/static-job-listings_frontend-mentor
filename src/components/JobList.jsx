@@ -6,7 +6,7 @@ import { selectVisiblePositions } from '../store/positions/positions-selectors.j
 import { addTag } from '../store/tags/tags-actions.js'
 import { selectTags } from '../store/tags/tags-selectors.js'
 
-const JobList = (/*{ cards, onTagListClick }*/) => {
+const JobList = () => {
   const currentTags = useSelector(selectTags)
   const jobs = useSelector((state) =>
     selectVisiblePositions(state, currentTags)
@@ -20,9 +20,6 @@ const JobList = (/*{ cards, onTagListClick }*/) => {
 
   return (
     <ul className="list">
-      {/*{cards.map((card) => (*/}
-      {/*  <Card {...card} key={card.id} onTagListClick={onTagListClick} />*/}
-      {/*))}*/}
       {jobs.map((card) => (
         <Card {...card} key={card.id} onTagListClick={onTagListClick} />
       ))}

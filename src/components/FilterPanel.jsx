@@ -5,12 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectTags } from '../store/tags/tags-selectors.js'
 import { clearTags, deleteTag } from '../store/tags/tags-actions.js'
 
-const FilterPanel = (
-  {
-    /*tags,*/
-    /*onClear, onDelete,*/
-  }
-) => {
+const FilterPanel = () => {
   const tags = useSelector(selectTags)
 
   const dispatch = useDispatch()

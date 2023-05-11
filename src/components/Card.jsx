@@ -1,6 +1,7 @@
 import '../scss/card.scss'
 import '../scss/tags.scss'
 import '../scss/badge.scss'
+import ListTag from './ListTag.jsx'
 
 const Card = (card) => {
   const {
@@ -15,12 +16,6 @@ const Card = (card) => {
     new: newJob,
     featured,
   } = card
-
-  const cardTags = tags.map((tag) => (
-    <div className="tag" key={tag} onClick={() => onTagListClick(tag)}>
-      {tag}
-    </div>
-  ))
 
   const newBadge = newJob ? <div className="badge badge_new">NEW!</div> : null
 
@@ -51,7 +46,15 @@ const Card = (card) => {
         </div>
       </div>
       <hr />
-      <div className="tags">{cardTags}</div>
+      <div className="tags">
+        {tags.map((tag) => (
+          <ListTag
+            key={tag}
+            name={tag}
+            onTagListClick={() => onTagListClick(tag)}
+          />
+        ))}
+      </div>
     </li>
   )
 }
