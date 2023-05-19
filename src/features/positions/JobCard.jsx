@@ -1,9 +1,9 @@
-import '../scss/card.scss'
-import '../scss/tags.scss'
-import '../scss/badge.scss'
-import ListTag from './ListTag.jsx'
+import '../../scss/card.scss'
+import '../../scss/tags.scss'
+import '../../scss/badge.scss'
+import JobListTag from './JobListTag.jsx'
 
-const Card = (card) => {
+const JobCard = (card) => {
   const {
     logo,
     company,
@@ -48,7 +48,7 @@ const Card = (card) => {
       <hr />
       <div className="tags">
         {tags.map((tag) => (
-          <ListTag
+          <JobListTag
             key={tag}
             name={tag}
             onTagListClick={() => onTagListClick(tag)}
@@ -59,4 +59,4 @@ const Card = (card) => {
   )
 }
 
-export default Card
+export default JobCard

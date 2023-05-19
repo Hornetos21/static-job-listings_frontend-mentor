@@ -1,4 +1,4 @@
-const ListTag = ({ name, onTagListClick }) => {
+const JobListTag = ({ name, onTagListClick }) => {
   return (
     <div className="tag" onClick={onTagListClick}>
       {name}
@@ -6,4 +6,4 @@ const ListTag = ({ name, onTagListClick }) => {
   )
 }
 
-export default ListTag
+export default JobListTag

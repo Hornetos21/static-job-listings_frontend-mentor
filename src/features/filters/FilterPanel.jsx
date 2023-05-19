@@ -1,16 +1,15 @@
 import FilterTag from './FilterTag.jsx'
 
-import '../scss/filter.scss'
+import '../../scss/filter.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectTags } from '../store/tags/tags-selectors.js'
-import { clearTags, deleteTag } from '../store/tags/tags-actions.js'
+import { clearTags, removeTag, selectTags } from './filters-slice.js'
 
 const FilterPanel = () => {
   const tags = useSelector(selectTags)
 
   const dispatch = useDispatch()
-  const onClear = () => dispatch(clearTags)
-  const onDelete = (tag) => dispatch(deleteTag(tag))
+  const onClear = () => dispatch(clearTags())
+  const onDelete = (tag) => dispatch(removeTag(tag))
 
   const classes = !tags.length ? 'filter' : 'filter filter_active'
 

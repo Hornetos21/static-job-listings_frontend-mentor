@@ -1,4 +1,4 @@
-import '../scss/tags.scss'
+import '../../scss/tags.scss'
 
 const FilterTag = ({ onDelete, name }) => {
   return (

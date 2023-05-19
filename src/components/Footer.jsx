@@ -1,19 +1,20 @@
 import '../scss/footer.scss'
 
+const gitHub = 'https://github.com/Hornetos21'
+const urlChallenge =
+  'https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt'
 const Footer = () => {
   return (
-    <footer>
-      <div className="attribution">
-        {`Challenge by `}
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
-          Frontend Mentor
-        </a>
-        {`. Coded by `}
-        <a href="https://github.com/Hornetos21" target="_blank">
-          Igor Shapovalov
-        </a>
-        .
-      </div>
+    <footer className="attribution">
+      Challenge by{' '}
+      <a className="link" href={urlChallenge} target="_blank" rel="noreferrer">
+        Frontend Mentor
+      </a>
+      . Coded by{' '}
+      <a className="link" href={gitHub}>
+        Igor Shapovalov
+      </a>
+      .
     </footer>
   )
 }
