@@ -19,6 +19,15 @@ export const loadPositions = createAsyncThunk(
         tags: [job.level, job.role, ...job.languages, ...job.tools],
       }
     })
+  },
+  {
+    condition: (_, { getState }) => {
+      const { status } = getState().jobs
+
+      if (status === 'loading') {
+        return false
+      }
+    },
   }
 )
 
@@ -34,7 +43,7 @@ const positionsSlice = createSlice({
       })
       .addCase(loadPositions.rejected, (state, action) => {
         state.status = 'idle'
-        state.error = 'Something went wrong!'
+        state.error = action.error.message
       })
       .addCase(loadPositions.fulfilled, (state, action) => {
         state.status = 'idle'
